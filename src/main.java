@@ -7,30 +7,13 @@ public class main {
 
         int n = sc.nextInt();
 
-        while (n <= 0){
+        while (n <= 2){
             System.out.println("Número Inválido! Tente outro valor:");
             n = sc.nextInt();
         }
 
-        int primos = 0;
-
-        for (int i = 1; i <= n; i++){
-            int divisores = 0;
-
-            for (int j = 1; j <= i; j++){
-                if (i % j == 0){
-                    divisores++;
-                }
-            }
-
-            if (divisores <= 2){
-                ++primos;
-                System.out.println(i);
-            }
-        }
-
-        System.out.println("Número de Primos: " + primos);
-        System.out.println("Número escolhido: " + n);
+        System.out.println("Número de primos " + Calculations.quantidadePrimos(n));
+        System.out.println("Números primos:" + Calculations.listaPrimos(n));
 
         sc.close();
     }
